@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int i=1,j=1,numofframes=10,x1,x;
+	printf("number of frames is %d\n",numofframes);
+	while(numofframes>0)
+	{
+		printf("sending frames is %d\n",i);
+		x=rand()%10;
+		if(x%10==0)
+		{
+			for(x1=1;x1<2;x1++)
+			{
+				printf("waiting for %d seconds\n",x1);
+				sleep(x1);
+			}
+		printf("sending frames is %d\n",i);
+		x=rand()%10;
+		}
+	printf("\n ack for frame %d\n",i);
+	numofframes=numofframes-1;
+	i++;
+	j++;
+	}
+printf("\n end of stop and wait protocol\n");
+getch();
+}
