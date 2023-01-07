@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int w,i,f,frames[50];
+	printf("enter window size\n");
+	scanf("%d",&w);
+	
+	printf("enter number of frames to txt\n");
+	scanf("%d",&f);
+	
+	printf("enter %d frames",f);
+	for(i=1;i<=f;i++)
+	scanf("%d",&frames[i]);
+	
+	printf("in sliding window protocol,the frames are sent in the following manner\n");
+	printf("after sending %d frames,at each stage sender waits for act send by the rcr\n",w);
+	for(i=1;i<=f;i++)
+	{
+		if(i%w==0)
+		{
+			printf("%d\n",frames[i]);
+			printf("ack of above frames sent is rcd by sender\n");
+		}
+	else printf("%d\n",frames[i]);
+	}
+    if(f%w!=0)
+    printf("ack of above from sent is rcd by sender\n");
+    return 0;
+}
